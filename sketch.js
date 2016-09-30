@@ -42,7 +42,7 @@ var setupGlobalVariables = function() {
   epsilon = 10;
 
   // number of particles - "dots"
-  numDots = 50;
+  numDots = 30;
   
   // values for randomizing initial particle velocities
   minVel = 0.05*minRes;
