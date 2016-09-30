@@ -8,8 +8,10 @@ var setupGlobalVariables = function() {
   // size of the "field" extends past the edges of the canvas.
   xMin = -0.2*xRes;
   xMax = 1.2*xRes;
+  xMid = 0.5*(xMin + xMax);
   yMin = -0.2*yRes;
   yMax = 1.2*yRes;
+  yMid = 0.5*(yMin + yMax);
   edgeWidth = xMax * 0.1;
   
   
@@ -71,12 +73,16 @@ class Dots{
     var nSquared = this.N*this.N;
     this.D = new Array(  );
     
-    for( var i = 0 ; i < this.N ; i++ ) {
-      this.X[i] = createVector( random(xMin,xMax) , random(yMin , yMax) );
-      this.V[i] = p5.Vector.random2D();
-      this.V[i].mult( random(minVel,maxVel) );
-      this.A[i] = ( createVector( 0 , 0 ) );
-      this.M[i] = ( avgMass );
+    for( var i = 0 ; i < this.N / 2 ; i++ ) {
+      this.X[2*i] = createVector( random(xMin,xMid) , random(yMin , yMax) );
+      this.X[2*i+1] = createVector( 2*xMid - this.X[2*i].x , this.X[2*i].y );
+      this.V[2*i] = p5.Vector.random2D();
+      this.V[2*i].mult( random(minVel,maxVel) );
+      this.V[2*i+1] = createVector(-1*this.V[2*i].x , this.V[2*i].y );
+      this.A[2*i] = ( createVector( 0 , 0 ) );
+      this.A[2*i+1] = ( createVector( 0 , 0 ) );
+      this.M[2*i] = ( avgMass );
+      this.M[2*i+1] = ( avgMass );
     }
   }
 }
