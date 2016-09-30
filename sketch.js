@@ -74,7 +74,7 @@ class Dots{
     this.D = new Array(  );
     
     for( var i = 0 ; i < this.N / 2 ; i++ ) {
-      this.X[2*i] = createVector( random(xMin,xMid) , random(yMin , yMax) );
+      this.X[2*i] = createVector( random(xMid*0.5,xMid) , random(yMin , yMax) );
       this.X[2*i+1] = createVector( 2*xMid - this.X[2*i].x , this.X[2*i].y );
       this.V[2*i] = p5.Vector.random2D();
       this.V[2*i].mult( random(minVel,maxVel) );
