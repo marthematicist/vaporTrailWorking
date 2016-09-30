@@ -38,7 +38,7 @@ var setupGlobalVariables = function() {
   // constands for physics simulation
   edgeSpringConstant = 50000;
   frictionConstant = 0.1;
-  universalConstant = 25000;
+  universalConstant = 250000;
   epsilon = 10;
 
   // number of particles - "dots"
