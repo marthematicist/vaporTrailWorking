@@ -33,7 +33,7 @@ var setupGlobalVariables = function() {
   bgAlpha = 0;
   
   // time between frames, for physics simulation
-  dt = 1.0 / ( 40 );
+  dt = 1.0 / ( 80 );
   
   // constands for physics simulation
   edgeSpringConstant = 50000;
